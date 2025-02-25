@@ -1,0 +1,172 @@
+/* 1300px ~ 681px */
+@media (max-width: 1300px) {
+
+  /* header.ejs */
+  .header-icon img {
+    width: 120px;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  /* index.ejs */
+  .home-top {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-top img {
+    width: 50%;
+    height: 50%;
+    margin-right: 16px;
+  }
+  .introduce {
+    text-align: center;
+  }
+  .introduce img {
+    width: 200px;
+  }
+  .carrer {
+    width: 100%;
+  }
+
+  /* price.ejs */
+  .price-imageandtext {
+    display: flex;
+    align-items: center;
+  }
+  .price-imageandtext img {
+    width: 60%;
+  }
+  .price-imageandtext p {
+    justify-content: center;
+  }
+}
+
+/* 680px ~ 351px */
+@media (max-width: 680px) {
+
+  /* header.ejs */
+  .header-username {
+    font-size: 12px;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  /* nav.ejs */
+  nav ul {
+    flex-direction: column;
+  }
+
+  /* index.ejs */
+  .introduce img {
+    width: 120px;
+  }
+  .home-top {
+    display: block;
+  }
+  .home-top img {
+    width: 100%;
+    height: 100%;
+  }
+  .policy p {
+    font-size: 12px;
+  }
+
+  /* facility.ejs */
+  .rooo-intro img {
+    width: 50%;
+    height: 50%;
+  }
+
+  /* price.ejs */
+  .price-imageandtext {
+    display: block;
+  }
+  .price-imageandtext img {
+    width: 100%;
+  }
+
+  /* signup.ejs */
+  .panel h2 {
+    font-size: 20px;
+  }
+
+  .panel form p {
+    font-size: 14px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    font-size: 14px;
+  }
+
+  input[type="submit"] {
+    font-size: 14px;
+  }
+}
+
+/* 350px ~ 1px */
+@media (max-width: 350px) {
+  body {
+    font-size: 14px;
+  }
+
+  /* header.ejs */
+  header .container {
+    text-align: center;
+  }
+
+  .header-icon img {
+    width: 100px;
+  }
+
+  .header-username {
+    font-size: 8px;
+  }
+
+  header ul {
+    display: none;
+  }
+
+  /* nav.ejs */
+  nav ul {
+    padding: 5px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  /* index.ejs */
+  .introduce {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  /* facility.ejs */
+  .google-map {
+    display: block;
+  }
+
+  /* reserved.ejs */
+  .cancel-btn {
+    padding: 5px;
+  }
+}

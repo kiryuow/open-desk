@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>料金｜オープンデスク</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <script src="https://kit.fontawesome.com/64a65c6c44.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <%- include('common/header') %>
+    <%- include('common/nav') %>
+
+      <main>
+        <div class="container">
+          <section>
+            <div class="price-top">
+              <h1 class="heading">料金のご案内</h1>
+              <div class="price-text">
+                <h2>都度払いだから、安心して通える！</h2>
+                <p>都度払いのメリット</p>
+                <ul>
+                  <li>自分の行きたいときに行くことができます</li>
+                  <li>いつでもやめることができます</li>
+                </ul>
+              </div>
+              <div class="price-table">
+                <table>
+                  <tr>
+                    <th>種類</th>
+                    <th>料金</th>
+                  </tr>
+                  <tr>
+                    <td>1コマ利用</td>
+                    <td>1000円</td>
+                  </tr>
+                  <tr>
+                    <td>10コマ回数券</td>
+                    <td>9000円</td>
+                  </tr>
+                  <tr>
+                    <td>20コマ回数券</td>
+                    <td>18000円</td>
+                  </tr>
+                </table>
+                <p>※1コマ1時間です<br>※回数券をご利用される方は、お越しになった際にお申し付けください</p>
+              </div>
+              <div class="price-compare">
+                <h2>他塾と比較すると圧倒的価格！</h2>
+                <div class="price-imageandtext">
+                  <img src="\images\価格比較グラフ.png" alt="準備中" width="100%" loading="lazy">
+                  <p>初期費用も必要ありません！<br>追加でお支払いすることはありません</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="price-method">
+              <h1 class="heading">支払い方法のご案内</h1>
+              <ul>
+                <li>ご利用の最初に、直接お受け取りいたします。</li>
+                <li><span>現金払い、またはpaypay払いのみ</span>とさせていただきます。</li>
+                <li>トラブルのないように、後払いはご遠慮させていただいております。</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer>
+        <%- include('common/footer') %>
+      </footer>
+      <script src="/js/script.js"></script>
+</body>

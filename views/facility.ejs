@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>設備・場所｜オープンデスク</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <script src="https://kit.fontawesome.com/64a65c6c44.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <%- include('common/header') %>
+    <%- include('common/nav') %>
+      <main>
+        <div class="container">
+          <section>
+            <div class="room-top">
+              <h1 class="heading">お部屋のご案内</h1>
+              <div class="rooo-intro">
+                <img src="\images\勉強部屋写真.jpg" alt="準備中" width="100%" loading="lazy">
+                <ul>
+                  <li>完全個別制</li>
+                  <br>
+                  <li>1人様テーブルと椅子を1つずつご用意させていただいております</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="room-bottom">
+              <h1 class="heading">お部屋環境のご案内</h1>
+              <div class="room-icons">
+                <div class="room-ex">
+                  <p><i class="fa-solid fa-wifi"></i>Wi-Fi完備</p>
+                </div>
+                <div class="room-ex">
+                  <p><i class="fa-solid fa-glass-water-droplet"></i>飲水無料</p>
+                </div>
+                <div class="room-ex">
+                  <p><i class="fa-solid fa-restroom"></i>トイレ付き</p>
+                </div>
+                <div class="room-ex">
+                  <p><i class="fa-solid fa-wind"></i>エアコン完備</p>
+                </div>
+                <div class="room-ex">
+                  <p><i class="fa-solid fa-plug"></i>電源無料</p>
+                </div>
+                <div class="room-ex">
+                  <p><i class="fa-solid fa-hand-sparkles"></i>清掃済み</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="location">
+              <h1>当塾の場所のご案内</h1>
+              <div class="google-map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3275.9613227915256!2d135.6568903830686!3d34.80691490967358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60011c16ea548bed%3A0x3f54faee1536468e!2z44CSNTczLTAwMTMg5aSn6Ziq5bqc5p6a5pa55biC5pif5LiY77yR5LiB55uu77yS77yU4oiS77yVIOesrO-8k-aYn-OCseS4mOODnuODs-OCt-ODp-ODsw!5e0!3m2!1sja!2sjp!4v1725592473403!5m2!1sja!2sjp"
+                  width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div class="address">
+                  <p>〒573-0013</p>
+                  <p>大阪府立枚方市星が丘1-24-5<br>第3星丘マンション405</p>
+                  <br>
+                  <p>※もし場所がわからない場合は、お問い合わせにてお申し付けください。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer>
+        <%- include('common/footer') %>
+      </footer>
+      <script src="/js/script.js"></script>
+</body>
+
+</html>

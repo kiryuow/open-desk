@@ -1,0 +1,39 @@
+<header>
+  <div class="container">
+    <div class="header-icon">
+      <a href="/"><img src="/images/オープンデスク_アイコン.webp" alt="オープンデスク" width="100%" loading="lazy"></a>
+    </div>
+    <div class="header-username">
+      <p>ようこそ、<%= locals.username %>さん</p>
+    </div>
+    <ul class="desktop-menu">
+      <% if (locals.isLoggedIn) { %>
+        <li><a href="/logout">ログアウト</a></li>
+        <% } else { %>
+          <li><a href="/signup">新規登録</a></li>
+          <% } %>
+            <li><a href="/login">予約ページ</a></li>
+    </ul>
+    <i class="fa-solid fa-bars menu-icon" onclick="toggleMenu()"></i>
+  </div>
+</header>
+
+<!-- モバイル用メニュー -->
+<div id="menu" class="menu">
+  <div class="menu-content">
+    <span class="menu-close" onclick="toggleMenu()">&times;</span>
+    <ul>
+      <li><a href="/">ホーム</a></li>
+      <li><a href="/individual">自習×個別指導塾</a></li>
+      <li><a href="/facility">設備・場所</a></li>
+      <li><a href="/price">料金</a></li>
+      <li><a href="/contact">お問い合わせ</a></li>
+      <% if (locals.isLoggedIn) { %>
+        <li class="menu-button"><a href="/logout">ログアウト</a></li>
+      <% } else { %>
+        <li class="menu-button"><a href="/signup">新規登録</a></li>
+      <% } %>
+      <li class="menu-button"><a href="/login">予約ページ</a></li>
+    </ul>
+  </div>
+</div>

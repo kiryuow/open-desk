@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <script src="https://kit.fontawesome.com/64a65c6c44.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <%- include('common/header') %>
+    <%- include('common/nav') %>
+      <main class="contact-container">
+        <h1>お問い合わせ</h1>
+        <p>以下のフォームに必要事項を入力し、送信してください。</p>
+
+        <% if (successMessage) { %>
+          <div class="success-message">
+            <%= successMessage %>
+          </div>
+          <% } %>
+
+            <% if (errorMessage) { %>
+              <div class="error-message">
+                <%= errorMessage %>
+              </div>
+              <% } %>
+
+                <form action="/contact" method="post">
+                  <div class="form-group">
+                    <label for="email">メールアドレス<span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message">お問い合わせ内容<span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                  </div>
+
+                  <button type="submit" class="submit-button">送信</button>
+                </form>
+      </main>
+      <%- include('common/footer') %>
+      <script src="/js/script.js"></script>
+</body>
+
+</html>
