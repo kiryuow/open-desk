@@ -16,23 +16,27 @@ app.use('/api', apiRoutes);
 
 app.set('view engine', 'ejs');
 
+require('dotenv').config();
+
 const sessionStore = new MySQLStore({
-  host: '127.0.0.1',
-  port: 3306,
-  user: 'root',
-  password: 'kinki1412',
-  database: 'open-desk',
-  debug: true // デバッグを有効化
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT || 3306,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  debug: false, // 本番環境ではfalse推奨
+  ssl: {} // RenderでMySQLを使う場合はSSLが必要な場合があります
 });
 
+
 const sessionMiddleware = session({
-  secret: '470eaaa52588ab5b04a6b91b37eb9a8473a25fb44ba1465ca079430b6e90b10d',
+  secret: process.env.SESSION_SECRET || 'your-secret',
   resave: false,
   saveUninitialized: true,
   store: sessionStore,
   cookie: {
     httpOnly: true,
-    secure: false,
+    secure: process.env.NODE_ENV === 'production', // 本番環境ならtrueに設定
     sameSite: 'strict'
   }
 });
@@ -586,5 +590,5 @@ app.get('/reserved', (req, res) => {
 const PORT = process.env.PORT || 5000;
 
 http.listen(PORT, () => {
-  console.log('サーバーがポート ${PORT} で起動しました');
+  console.log(`サーバーがポート ${PORT} で起動しました`);
 });
