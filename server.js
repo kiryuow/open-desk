@@ -25,7 +25,9 @@ const sessionStore = new MySQLStore({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   debug: false, // 本番環境ではfalse推奨
-  ssl: {} // RenderでMySQLを使う場合はSSLが必要な場合があります
+  ssl: {
+    rejectUnauthorized: false
+  } // RenderでMySQLを使う場合はSSLが必要な場合があります
 });
 
 

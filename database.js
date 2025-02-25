@@ -8,7 +8,10 @@ const connection = mysql.createConnection({
   database: process.env.DB_NAME,
   port: process.env.DB_PORT || 3306,
   timezone: 'Asia/Tokyo',
-  multipleStatements: true
+  multipleStatements: true,
+  ssl: {
+    rejectUnauthorized: false // Render内部の場合はfalseで大丈夫です
+  }
 });
 
 connection.connect(err => {
