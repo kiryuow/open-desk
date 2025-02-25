@@ -34,7 +34,7 @@ const sessionStore = new MySQLStore({
 const sessionMiddleware = session({
   secret: process.env.SESSION_SECRET || 'your-secret',
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   store: sessionStore,
   cookie: {
     httpOnly: true,
