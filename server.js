@@ -51,8 +51,6 @@ io.use((socket, next) => {
 });
 
 
-
-
 const reservations = {}; // サーバー側で予約状況を管理
 
 io.on('connection', async (socket) => {
