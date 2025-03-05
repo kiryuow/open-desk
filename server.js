@@ -24,21 +24,18 @@ const sessionStore = new MySQLStore({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  debug: false, // 本番環境ではfalse推奨
-  ssl: {
-    rejectUnauthorized: false
-  } // RenderでMySQLを使う場合はSSLが必要な場合があります
+  ssl: false
 });
 
 
 const sessionMiddleware = session({
-  secret: process.env.SESSION_SECRET || 'your-secret',
+  secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
   store: sessionStore,
   cookie: {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production', // 本番環境ならtrueに設定
+    secure: false,
     sameSite: 'strict'
   }
 });
@@ -587,7 +584,7 @@ app.get('/reserved', (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 80;
 
 http.listen(PORT, () => {
   console.log(`サーバーがポート ${PORT} で起動しました`);

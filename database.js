@@ -9,17 +9,15 @@ const connection = mysql.createConnection({
   port: process.env.DB_PORT || 3306,
   timezone: 'Asia/Tokyo',
   multipleStatements: true,
-  ssl: {
-    rejectUnauthorized: false // Render内部の場合はfalseで大丈夫です
-  }
 });
 
-connection.connect(err => {
+connection.getConnection((err, conn) => {
   if (err) {
     console.error('❌ MySQL connection failed:', err.stack);
     return;
   }
-  console.log('✅ Connected to Render MySQL as ID', connection.threadId);
+  console.log('✅ Connected to AWS RDS MySQL');
+  conn.release();
 });
 
 module.exports = connection;
