@@ -11,7 +11,7 @@ const connection = mysql.createConnection({
   multipleStatements: true,
 });
 
-connection.getConnection((err, conn) => {
+connection.query((err, conn) => {
   if (err) {
     console.error('❌ MySQL connection failed:', err.stack);
     return;
