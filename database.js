@@ -11,13 +11,12 @@ const connection = mysql.createConnection({
   multipleStatements: true,
 });
 
-connection.query((err, conn) => {
+connection.connect((err) => {
   if (err) {
     console.error('❌ MySQL connection failed:', err.stack);
     return;
   }
   console.log('✅ Connected to AWS RDS MySQL');
-  conn.release();
 });
 
 module.exports = connection;

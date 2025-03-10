@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = require('./app');
 const http = require('http').Server(app);
@@ -29,7 +30,7 @@ const sessionStore = new MySQLStore({
 
 
 const sessionMiddleware = session({
-  secret: process.env.SESSION_SECRET,
+  secret: process.env.SESSION_SECRET || 'default-secret-key',
   resave: false,
   saveUninitialized: true,
   store: sessionStore,
@@ -584,7 +585,7 @@ app.get('/reserved', (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3000;
 
 http.listen(PORT, () => {
   console.log(`サーバーがポート ${PORT} で起動しました`);
