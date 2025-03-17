@@ -440,8 +440,8 @@ app.get('/reservation', (req, res) => {
         timeSlots.forEach((time) => {
           const timeKey = time.slice(0, 5);
           reservations[dayKey][timeKey] = {
-            class: 'unavailable',
-            symbol: '×',
+            class: 'available',
+            symbol: '〇',
             dateValue: dayKey
           };
         });
