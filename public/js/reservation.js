@@ -49,7 +49,7 @@ socket.on('updateReservation', (data) => {
     // 「〇」を押して予約したら、誰も押せない「×」状態にする
     cell.className = 'unavailable';
     cell.textContent = '×';
-  } else if (data.status === 'available') {
+  } else {
     cell.className = 'available';
     cell.textContent = '〇';
   }
