@@ -469,6 +469,18 @@ app.get('/reservation', (req, res) => {
         }
       });
 
+      Object.keys(reservations).forEach((day) => {
+        Object.keys(reservations[day]).forEach((time) => {
+          if (!reservations[day][time]) {
+            reservations[day][time] = {
+              class: 'available',
+              symbol: '〇',
+              dateValue: day
+            };
+          }
+        });
+      });
+
       console.log('📌 取得した予約データ:', results); // **デバッグ用**
 
       res.render('reservation', {
