@@ -60,7 +60,7 @@
                     <%= reservation.symbol %>
                   </td>
                   <% } else { %>
-                    <td class="unavailable">×</td>
+                    <td class="available" data-date="<%= day %>" data-time="<%= timeSlot %>">〇</td>
                     <% } %>
                       <% }); %>
           </tr>
